@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ある区間だけ、対象をページ上端に固定する</title>
+<link rel="stylesheet" href="common.css">
+<style>
+.target {
+  background-color: #0ff;
+  height: 150px;
+  line-height: 150px;
+  margin: 0 auto;
+  text-align: center;
+  width: 150px;
+}
+</style>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<script>
+window.onload = function () {
+  // コントローラー
+  var controller = new ScrollMagic.Controller();
+
+  // シーン
+  new ScrollMagic.Scene({
+    duration: 800, // 800pxまで
+    offset: 300 // スタートは300px
+  })
+  .setPin("#target-01") // 要素の指定
+  // インジケータを非表示にするには下記をコメントアウトする
+  .addIndicators()
+  .addTo(controller); // コントローラーに渡す
+};
+</script>
+</head>
+<body>
+<h1>ある区間だけ、対象をページ上端に固定する</h1>
+<div class="spacer"></div>
+<div id="target-01" class="target">
+This is my page
+</div>
+</body>
+</html>
