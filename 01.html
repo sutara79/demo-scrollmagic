@@ -30,7 +30,7 @@ window.onload = function () {
     duration: 800, // 800pxまで
     offset: 300 // スタートは300pxから
   })
-  .setPin("#target-01") // 要素の指定
+  .setPin("#target") // 要素の指定
   // インジケータを非表示にするには下記をコメントアウトする
   .addIndicators()
   .addTo(controller); // コントローラーに渡す
@@ -40,7 +40,7 @@ window.onload = function () {
 <body>
 <h1>ある区間だけ、対象を固定する</h1>
 <div class="spacer"></div>
-<div id="target-01" class="target">
+<div id="target" class="target">
 This is my page
 </div>
 </body>

@@ -4,13 +4,24 @@
 
 - ScrollMagic: http://scrollmagic.io/
 
-#### ある区切り以降、対象を拡大する
+#### ある区切り以降、対象を拡大する (要GSAP)
 - デモ: http://sutara79.github.io/demo-scrollmagic/04.html
 - 公式のデモ: http://scrollmagic.io/examples/basic/simple_tweening.html
 
-#### ある区切り以降、対象の幅を左へ広げる
+#### ある区切り以降、対象の幅を左へ広げる (要GSAP)
 - デモ: http://sutara79.github.io/demo-scrollmagic/02.html
 - 公式のデモ: http://scrollmagic.io/examples/basic/going_horizontal.html
+
+#### ある区切り以降、対象をフェードアウトさせる (要Velocity.js)
+- デモ: http://sutara79.github.io/demo-scrollmagic/05.html
+- 公式のデモ: http://scrollmagic.io/examples/basic/simple_velocity.html
+
+#### ある区切り以降、対象をフェードインさせる (要GSAP)
+上の逆です。  
+今のところ、Velocity.jsできれいにフェードインさせる方法が分かりません。
+
+- デモ: http://sutara79.github.io/demo-scrollmagic/06.html
+- 公式のデモ: http://scrollmagic.io/examples/basic/simple_velocity.html
 
 #### ある区間だけ、対象を固定する
 - デモ: http://sutara79.github.io/demo-scrollmagic/01.html
