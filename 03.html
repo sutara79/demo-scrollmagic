@@ -18,6 +18,9 @@ body {
 .panel {
   height: 100%;
   width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .panel.last-but-one {
   /**
@@ -29,17 +32,14 @@ body {
 /**
  * デモ用のスタイル
  */
-.red {
-  background-image: linear-gradient(-45deg, red, gray);
+.first {
+  background-image: url(001.jpg);
 }
-.blue {
-  background-image: linear-gradient(-45deg, blue, gray);
+.second {
+  background-image: url(002.jpg);
 }
-.green {
-  background-image: linear-gradient(-45deg, green, gray);
-}
-.purple {
-  background-image: linear-gradient(-45deg, purple, gray);
+.third {
+  background-image: url(003.jpg);
 }
 </style>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
@@ -71,17 +71,14 @@ window.onload = function () {
 </head>
 <body>
 <h1>各セクションの背景を、劇場の幕が上下するように切り替える</h1>
-<section class="panel red">
+<section class="panel first">
   <h2>ONE</h2>
 </section>
-<section class="panel blue">
+<section class="panel second last-but-one">
   <h2>TWO</h2>
 </section>
-<section class="panel green last-but-one">
+<section class="panel third">
   <h2>THREE</h2>
-</section>
-<section class="panel purple">
-  <h2>FOUR</h2>
 </section>
 </body>
 </html>
