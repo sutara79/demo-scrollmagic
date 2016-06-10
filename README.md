@@ -30,3 +30,7 @@
 #### 各セクションの背景を、劇場の幕が上下するように切り替える
 - デモ: http://sutara79.github.io/demo-scrollmagic/03.html
 - 公式のデモ: http://scrollmagic.io/examples/basic/section_wipes_natural.html
+
+#### 視差効果を生みながらスクロールさせる
+- デモ: http://sutara79.github.io/demo-scrollmagic/07.html
+- 公式のデモ: http://scrollmagic.io/examples/advanced/parallax_scrolling.html
