@@ -31,6 +31,14 @@
 - デモ: http://sutara79.github.io/demo-scrollmagic/03.html
 - 公式のデモ: http://scrollmagic.io/examples/basic/section_wipes_natural.html
 
-#### 視差効果を生みながらスクロールさせる
+#### 視差効果を生みながらスクロールさせる(1枚のみ)
+注意: 表示領域の縦横比は必ず背景画像の縦横比よりも幅広にしてください。逆に言えば、背景画像は縦長の方が視差効果が生まれやすいです。
+
 - デモ: http://sutara79.github.io/demo-scrollmagic/07.html
+- 公式のデモ: http://scrollmagic.io/examples/advanced/parallax_scrolling.html
+
+#### 視差効果を生みながらスクロールさせる(複数)
+注意: 表示領域の縦横比は必ず背景画像の縦横比よりも幅広にしてください。逆に言えば、背景画像は縦長の方が視差効果が生まれやすいです。
+
+- デモ: http://sutara79.github.io/demo-scrollmagic/08.html
 - 公式のデモ: http://scrollmagic.io/examples/advanced/parallax_scrolling.html
