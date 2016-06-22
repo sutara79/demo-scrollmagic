@@ -6,16 +6,15 @@
 <title>視差効果を生みながらスクロールさせる(1枚だけ)</title>
 <style>
 .parallax-window {
-  background-position: 0 0;
-  background-repeat: no-repeat;
+  background-position: center bottom;
   background-size: cover;
-  padding-top: 30%; /* 表示領域の縦横比を固定 */
+  padding-top: 30%;
 }
 .parallax1 {
   background-image: url(001.jpg);
 }
 .spacer {
-  height: 600px;
+  height: 400px;
 }
 </style>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script><!-- TweenMaxクラス使用のため必須 -->
@@ -26,14 +25,14 @@
 window.onload = function () {
   var controller = new ScrollMagic.Controller();
 
-  // 下記の設定によって、background-positionの縦方向のみ、0%から100%へ徐々に推移する。
+  // 下記の設定によって、background-positionの縦方向のみ、bottomからtopへ徐々に推移する。
   // そのため、背景画像は縦長のほうが視差効果が生まれやすい。
-  var tween = TweenMax.to(".parallax1", 1, {backgroundPosition: "0 100%", ease: Linear.easeNone});
+  var tween = TweenMax.to(".parallax1", 1, {backgroundPosition: "center top", ease: Linear.easeNone});
 
   var scene = new ScrollMagic.Scene({
     triggerElement: ".parallax1",
     triggerHook: "onEnter",
-    duration: window.innerHeight
+    duration: window.innerHeight + document.querySelector(".parallax1").clientHeight
   })
   .setTween(tween)
   // インジケータを非表示にするには下記をコメントアウトする
@@ -44,9 +43,6 @@ window.onload = function () {
 </head>
 <body>
 <h1>視差効果を生みながらスクロールさせる(1枚だけ)</h1>
-<p>
-  注意: 表示領域の縦横比は必ず背景画像の縦横比よりも幅広にしてください。逆に言えば、背景画像は縦長の方が視差効果が生まれやすいです。
-</p>
 <div class="spacer"></div>
 <div class="parallax-window parallax1"></div>
 <div class="spacer"></div>

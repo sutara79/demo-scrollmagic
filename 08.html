@@ -6,10 +6,9 @@
 <title>視差効果を生みながらスクロールさせる(複数)</title>
 <style>
 .parallax-window {
-  background-position: 0 0;
-  background-repeat: no-repeat;
+  background-position: center bottom;
   background-size: cover;
-  padding-top: 30%; /* 表示領域の縦横比を固定 */
+  padding-top: 30%;
 }
 .parallax1 {
   background-image: url(001.jpg);
@@ -21,7 +20,7 @@
   background-image: url(003.jpg);
 }
 .spacer {
-  height: 600px;
+  height: 400px;
 }
 </style>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script><!-- TweenMaxクラス使用のため必須 -->
@@ -35,11 +34,11 @@ window.onload = function () {
   var tween;
   var arr_parallax = document.querySelectorAll(".parallax-window");
   for (var i = 0; i < arr_parallax.length; i++) {
-    tween = TweenMax.to(arr_parallax[i], 1, {backgroundPosition: "0 100%", ease: Linear.easeNone});
+    tween = TweenMax.to(arr_parallax[i], 1, {backgroundPosition: "center top", ease: Linear.easeNone});
     new ScrollMagic.Scene({
       triggerElement: arr_parallax[i],
       triggerHook: "onEnter",
-      duration: window.innerHeight
+      duration: window.innerHeight + arr_parallax[i].clientHeight
     })
     .setTween(tween)
     // インジケータを非表示にするには下記をコメントアウトする
@@ -51,9 +50,6 @@ window.onload = function () {
 </head>
 <body>
 <h1>視差効果を生みながらスクロールさせる(複数)</h1>
-<p>
-  注意: 表示領域の縦横比は必ず背景画像の縦横比よりも幅広にしてください。逆に言えば、背景画像は縦長の方が視差効果が生まれやすいです。
-</p>
 <div class="spacer"></div>
 <div class="parallax-window parallax1"></div>
 <div class="spacer"></div>
