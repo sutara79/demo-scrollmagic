@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>各セクションの背景を、劇場の幕が上下するように切り替える</title>
+<style>
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.panel {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+.panel.last-but-one {
+  /**
+   * 最後のひとつ前のセクションに約20px以上の下マージンを設定する。
+   * こうしなければ最後のセクションの上に隙間が生じる。
+   */
+  margin-bottom: 20px;
+}
+.panel-inner {
+  background-image: url(panel-inner-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 200px;
+  opacity: 0;
+}
+.panel-body {
+  background-color: gray;
+  width: 960px;
+  margin: auto;
+}
+.first {
+  background-image: url(001.jpg);
+}
+.second {
+  background-image: url(002.jpg);
+}
+.third {
+  background-image: url(003.jpg);
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script><!-- TweenMaxクラス使用のため必須 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script><!-- 検査用のインジケータの表示で使用 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script><!-- TweenMaxクラス使用のため必須 -->
+<script>
+window.onload = function () {
+  // init
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      triggerHook: 'onLeave'
+    }
+  });
+
+  // get all slides
+  var slides = document.querySelectorAll("section.panel");
+
+  // create scene for every slide
+  for (var i = 0; i < slides.length; i++) {
+    new ScrollMagic.Scene({
+      triggerElement: slides[i]
+    })
+    .setPin(slides[i])
+    .setTween($(slides[i]).find(".panel-inner"), 100, {opacity: 100})
+    // インジケータを非表示にするには下記をコメントアウトする
+    .addIndicators()
+    .addTo(controller);
+  }
+};
+</script>
+</head>
+<body>
+<h1>各セクションの背景を、劇場の幕が上下するように切り替える</h1>
+<section class="panel first">
+  <div class="panel-inner">
+    <div class="panel-body">
+      あいうえお<br>
+      あいうえお<br>
+      あいうえお<br>
+    </div>
+  </div>
+</section>
+<section class="panel second last-but-one">
+  <div class="panel-inner">
+    <div class="panel-body">
+      あいうえお<br>
+      あいうえお<br>
+      あいうえお<br>
+    </div>
+  </div>
+</section>
+<section class="panel third">
+  <div class="panel-inner">
+    <div class="panel-body">
+      あいうえお<br>
+      あいうえお<br>
+      あいうえお<br>
+    </div>
+  </div>
+</section>
+</body>
+</html>
